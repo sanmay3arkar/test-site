@@ -1,0 +1,476 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Krona+One&family=Madimi+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sen:wght@700&display=swap" rel="stylesheet">
+        <style type="text/css">
+            body, html{
+                margin:0;
+                padding:0;
+                outline:none;
+                background:#0E0F11;
+                overflow-x:hidden;
+            }
+            .tbar{
+                position:fixed;
+                height:30%;
+                width:100%;
+                top:0;
+                z-index:1;
+                background-image:url('banner.jpg');
+                background-size:cover;
+                background-position:center;
+                border-bottom:2px solid red;
+            }
+            .srch{
+                display:inline-flex;
+                height:6.6%;
+                background:rgba(50,50,50,0.8);
+                width:60%;
+                border-radius:1000px;
+                align-items:center;
+                position:fixed;
+                top:13%;
+                left:50%;
+                transform:translateX(-50%);
+                z-index:2;
+            }
+            .fsb{
+                position:fixed;
+                top:6%;
+                left:10%;
+                transition:opacity 0.6s ease;
+                vertical-align:middle;
+                height:7%;
+                width:80%;
+                text-align:center;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                background-color:rgba(50,50,50,0.8);
+                border-radius:1000px;
+                margin:0;
+                padding:0;
+                line-height:normal;
+                z-index:4;
+            }
+            .fsb input[type="text"]{
+                height:100%;
+                width:75%;
+                border:none;
+                background:none;
+                font-family:"Sen", sans-serif;
+                text-align:center;
+                outline:none;
+                margin:0;
+                padding:0;
+                font-size:12px;
+                line-height:15px;
+                color:#FBFCF8;
+            }
+            .BHome, .BCategory, .BAiring, .BHowTo, .BRequest, .BRLink, .BRBug, .BSuggest{
+                display:flex;
+                align-items:center;
+                color:grey; 
+                font-family:'Sen', sans-serif;
+                font-size:100%;
+                border-bottom:1px solid grey;
+                height:8%;
+                width:84%;
+                margin-left:8%;
+            }
+            .BHome p, .BCategory p, .BAiring p, .BHowTo p, .BRequest p, .BRLink p, .BRBug p, .BSuggest p{
+                margin-left:3%;
+            }
+            .blur > *:not(.fsb):not(input){
+                filter:blur(1.5px);
+            }
+            .menuu{
+                position:fixed;
+                top:2.5%;
+                left:5%;
+                z-index:2;
+            }
+            .theme{
+                position:fixed;
+                top:2.5%;
+                right:5%;
+                z-index:2;
+            }
+            .material-symbols-outlined{
+                font-size:150% !important;
+                color:#E50913;
+            }
+            .sicon{
+                margin-left:8%;
+            }
+            .menus{
+                height:100%;
+                width:100%;
+                display:none;
+                background:#0E0F11;
+                animation-name:slideInRight;
+                animation-duration:0.5s;
+                animation-timing-function: ease;
+            }
+            @keyframes slideInRight{
+                from{
+                    transform:translateX(-100%);
+                }
+                to{
+                    transform:translateX(0);
+                }
+            }
+            @keyframes slideOutRight{
+                from{
+                    transform:translateX(0);
+                }
+                to{
+                    transform:translateX(-100%);
+                }
+            }
+            .closing-animation{
+                animation:slideOutRight 0.5s ease forwards;
+            }
+            .container{
+                display:flex;
+                transition:transform 0.3s ease;
+                height:65%;
+                margin-top:1%;
+            }
+            #container1{
+                display:flex;
+                height:100%;
+                margin-left:3%;
+                width:94%;
+                overflow-x:auto;
+            }
+            #container2{
+                height:265%;
+                margin-top:2%;
+                width:100%;
+                overflow:hidden;
+            }
+            .page{
+                flex:0 0 100%;
+                height:100%;
+            }
+            #page1{
+                background:;
+            }
+            #page2{
+                background:;
+            }
+            #page3{
+                background:;
+            }
+            .ltmovies{
+                height:100%;
+                width:45%;
+                border-radius:15px;
+                margin-left:0.5%;
+                margin-right:0.5%;
+                border:0.5px solid #E50913;
+                display:flex;
+                justify-content:center;
+            }
+            .ltmb{
+                height:32%;
+                width:100%;
+                display:flex;
+                justify-content:center;
+                margin-top:1%;
+                margin-bottom:1%;
+            }
+            .ltt{
+                font-family:'Sen', Sans-Serif;
+                color:#F2F3F4;
+                font-size:15;
+                margin-top:60%;
+            }
+            .up{
+                height:100%;
+                width:35%;
+                background-image:url(mbanner1.jpg);
+                background-size:cover;
+                background-position:center;
+                border-radius:3px;
+                margin-left:1%;
+                flex-shrink:0;
+            }
+            .alm{
+                display:flex;
+                height:20%;
+                width:100%;
+                justify-content:center;
+            }
+            .alm1{
+                height:96%;
+                width:45%;
+                margin-top:2%;
+                background:#232323;
+                border-radius:5px;
+            }
+            .all{
+                height:64%;
+                width:94%;
+                margin-top:3%;
+                margin-left:3%;
+                border-radius:5px;
+                background-image:url(mbanner.jpg);
+                background-size:cover;
+                background-position:center;
+            }
+            .alp{
+                font-family:'Sen', Sans-Serif;
+                color:#d3d3d3;
+                font-size:14;
+                text-align:center;
+                margin-left:3%;
+                margin-right:3%;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div style="height:33%; width:100%;"></div>
+        <div style="width:90%; margin:0 auto; display:flex; align-items:center; font-family:'Sen', sans-serif; color:grey; height:5%;">
+            <span class="material-symbols-outlined" style="margin-right:1%;">
+list_alt_add
+</span>
+            <p style="margin:0;"> • Latest Releases</p>
+        </div>
+        <div style="margin:0 auto; width:90%; margin-top:1%; height:0.3%; background:grey;">
+            <div id = "sbar" style="height:100%; width:33%; background:#E50913; transition:width 0.3s ease;"></div>
+        </div>
+        <div class="container" id="container">
+            <div class="page" id="page1">
+                <div class="ltmb">
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner.jpg); background-size:cover; background-position:center;" id="tr1" class="ltmovies">
+                        <p id="ltt1" class="ltt">Inception</p>
+                    </div>
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner.jpg); background-size:cover; background-position:center;" id="tr2" class="ltmovies"><p id="ltt2" class="ltt">Inception</p></div>
+                </div>
+                <div class="ltmb">
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner.jpg); background-size:cover; background-position:center;" id="tr3" class="ltmovies"><p id="ltt3" class="ltt">Inception</p></div>
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner.jpg); background-size:cover; background-position:center;" id="tr4" class="ltmovies"><p id="ltt4" class="ltt">Inception</p></div>
+                </div>
+                <div class="ltmb">
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner.jpg); background-size:cover; background-position:center;" id="tr5" class="ltmovies"><p id="ltt5" class="ltt">Inception</p></div>
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner.jpg); background-size:cover; background-position:center;" id="tr6" class="ltmovies"><p id="ltt6" class="ltt">Inception</p></div>
+                </div>
+            </div>
+            <div class="page" id="page2">
+                <div class="ltmb">
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner1.jpg); background-size:cover; background-position:center;" id="tr7" class="ltmovies"><p id="ltt7" class="ltt">Interstellar</p></div>
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner1.jpg); background-size:cover; background-position:center;" id="tr8" class="ltmovies"><p id="ltt8" class="ltt">Interstellar</p></div>
+                </div>
+                <div class="ltmb">
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner1.jpg); background-size:cover; background-position:center;" id="tr9" class="ltmovies"><p id="ltt9" class="ltt">Interstellar</p></div>
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner1.jpg); background-size:cover; background-position:center;" id="tr10" class="ltmovies"><p id="ltt10" class="ltt">Interstellar</p></div>
+                </div>
+                <div class="ltmb">
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner1.jpg); background-size:cover; background-position:center;" id="tr11" class="ltmovies"><p id="ltt11" class="ltt">Interstellar</p></div>
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner1.jpg); background-size:cover; background-position:center;" id="tr12" class="ltmovies"><p id="ltt12" class="ltt">Interstellar</p></div>
+                </div>
+            </div>
+            <div class="page" id="page3">
+                <div class="ltmb">
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner2.jpg); background-size:cover; background-position:center;" id="tr13" class="ltmovies"><p id="ltt13" class="ltt">Vikings</p></div>
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner2.jpg); background-size:cover; background-position:center;" id="tr14" class="ltmovies"><p id="ltt14" class="ltt">Vikings</p></div>
+                </div>
+                <div class="ltmb">
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner2.jpg); background-size:cover; background-position:center;" id="tr15" class="ltmovies"><p id="ltt15" class="ltt">Vikings</p></div>
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner2.jpg); background-size:cover; background-position:center;" id="tr16" class="ltmovies"><p id="ltt16" class="ltt">Vikings</p></div>
+                </div>
+                <div class="ltmb">
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner2.jpg); background-size:cover; background-position:center;" id="tr17" class="ltmovies"><p id="ltt17" class="ltt">Vikings</p></div>
+                    <div style="background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url(mbanner2.jpg); background-size:cover; background-position:center;" id="tr18" class="ltmovies"><p id="ltt18" class="ltt">Vikings</p></div>
+                </div>
+            </div>
+        </div>
+        <div style="height:5%; width:100%;"></div>
+        <div style="width:90%; margin:0 auto; display:flex; align-items:center; font-family:'Sen', sans-serif; color:grey; height:5%;">
+            <span class="material-symbols-outlined" style="margin-right:1%;">
+event_upcoming
+</span>
+            <p style="margin:0;"> • Upcoming Movies & Series</p>
+        </div>
+        <div style="margin:0 auto; width:90%; margin-top:1%; height:0.3%; background:grey;">
+            <div id = "sbar1" style="height:100%; width:33%; background:#E50913; transition:width 0.05s ease;"></div>
+        </div>
+        <div style = "height:25%; width:100%; margin-top:2%;">
+        <div id = "container1">
+            <div id="up1" class="up"></div>
+            <div id="up2" class="up"></div>
+            <div id="up3" class="up"></div>
+            <div id="up4" class="up"></div>
+            <div id="up5" class="up"></div>
+            <div id="up6" class="up"></div>
+            <div id="up7" class="up"></div>
+            <div id="up8" class="up"></div>
+            <div id="up9" class="up"></div>
+            <div id="up10" class="up"></div>
+        </div>
+        </div>
+        <div style="height:7%; width:100%;"></div>
+        <div style="width:90%; margin:0 auto; display:flex; align-items:center; font-family:'Sen', sans-serif; color:grey; height:5%;">
+            <span class="material-symbols-outlined" style="margin-right:1%;">
+all_match
+</span>
+            <p style="margin:0;"> • All Movies & Series</p>
+        </div>
+        <div style="margin:0 auto; width:90%; margin-top:1%; height:0.3%; background:#E50913;">
+        </div>
+        <div id = "container2">
+            <div class="alm">
+                <div class="alm1">
+                    <div id="all1" class="all"></div>
+                    <p id="alp1" class="alp">Inception (2010) Dual Audio (English - Hindi) 720p [562MB]</p>
+                </div>
+                <space style="width:3%"></space>
+                <div class="alm1">
+                    <div id="all2" class="all"></div>
+                    <p id="alp2" class="alp">Inception (2010) Dual Audio (English - Hindi) 720p [562MB]</p>
+                </div>
+            </div>
+            <div class="alm">
+                <div class="alm1">
+                    <div id="all3" class="all"></div>
+                    <p id="alp3" class="alp">Inception (2010) Dual Audio (English - Hindi) 720p [562MB]</p>
+                </div>
+                <space style="width:3%;"></space>
+                <div class="alm1">
+                    <div id="all4" class="all"></div>
+                    <p id="alp4" class="alp">Inception (2010) Dual Audio (English - Hindi) 720p [562MB]</p>
+                </div>
+            </div>
+            <div class="alm">
+                <div class="alm1">
+                    <div id="all5" class="all"></div>
+                    <p id="alp5" class="alp">Inception (2010) Dual Audio (English - Hindi) 720p [562MB]</p>
+                </div>
+                <space style="width:3%"></space>
+                <div class="alm1">
+                    <div id="all6" class="all"></div>
+                    <p id="alp6" class="alp">Inception (2010) Dual Audio (English - Hindi) 720p [562MB]</p>
+                </div>
+            </div>
+            <div class="alm">
+                <div class="alm1">
+                    <div id="all7" class="all"></div>
+                    <p id="alp7" class="alp">Inception (2010) Dual Audio (English - Hindi) 720p [562MB]</p>
+                </div>
+                <space style="width:3%"></space>
+                <div class="alm1">
+                    <div id="all8" class="all"></div>
+                    <p id="alp8" class="alp">Inception (2010) Dual Audio (English - Hindi) 720p [562MB]</p>
+                </div>
+            </div>
+            <div class="alm">
+                <div class="alm1">
+                    <div id="all9" class="all"></div>
+                    <p id="alp9" class="alp">Inception (2010) Dual Audio (English - Hindi) 720p [562MB]</p>
+                </div>
+                <space style="width:3%"></space>
+                <div class="alm1">
+                    <div id="all10" class="all"></div>
+                    <p id="alp10" class="alp">Inception (2010) Dual Audio (English - Hindi) 720p [562MB]</p>
+                </div>
+            </div>
+        </div>
+        <div id = 'overlayout' style="height:100%; width:100%; background:none; display:none; position:fixed; top:0; left:0; z-index:4;"></div>
+        <div class="tbar">
+            <div style="height:100%; width:100%; background-color:rgba(0, 0, 0, 0.65);"></div>
+        </div>
+        <div class="srch" id="srch1">
+            <span class="sicon">
+                <span class="material-symbols-outlined">
+search
+</span>
+            </span>
+            <p style="font-size:12px;color:grey;font-family:'Sen', sans-serif;margin-left:8%;">Awesome Movies..</p>
+        </div>
+        <div class="menuu">
+                    <span class="material-symbols-outlined">
+menu_open
+</span>
+                </div>
+        <div class="theme">
+                    <span class="material-symbols-outlined">
+light_mode
+</span>
+                </div>
+        <div class="fsb">
+            <input type="text", placeholder="Awesome keyword goes here..">
+            <span class="material-symbols-outlined">
+search
+</span>
+        </div>
+        <div id="menu" class="menus" style="z-index:4;">
+            
+            <span class="material-symbols-outlined" style="display:flex; justify-content:center; margin-top:5%; margin-bottom:5%;", id="closemenu">
+close
+</span>
+            <div class="secsrch" style="height:7%; width:86%; border-radius:1000px; background:rgba(50,50,50,0.7); align-items:center; display:flex; justify-content:center; margin-left:7%; border:0.1px solid #E50913; margin-bottom:1%;">
+                <input type="text" placeholder="Search for movies.." id="tb2" style="height:100%; width:78%; border:0; background:none; text-align:center; font-family:'Sen', sans-serif; font-size:15; outline:none; color:#FBFCF8;">
+                <span class="material-symbols-outlined">
+search
+</span>
+            </div>
+            <div class="BHome">
+                <span class="material-symbols-outlined">
+house
+</span>
+                <p>Home</p>
+            </div>
+            <div class="BCategory">
+                <span class="material-symbols-outlined">
+category
+</span>
+                <p>Category</p>
+            </div>
+            <div class="BAiring">
+                <span class="material-symbols-outlined">
+event_upcoming
+</span>
+                <p>Upcoming Movies</p>
+            </div>
+            <div class="BHowTo">
+                <span class="material-symbols-outlined">
+help
+</span>
+                <p>How to Download</p>
+            </div>
+            <div class="BRequest">
+                <span class="material-symbols-outlined">
+beenhere
+</span>
+                <p>Request Movie</p>
+            </div>
+            <div class="BRLink">
+                <span class="material-symbols-outlined">
+link_off
+</span>
+                <p>Report Dead Link</p>
+            </div>
+            <div class="BRBug">
+                <span class="material-symbols-outlined">
+bug_report
+</span>
+                <p>Report a Bug</p>
+            </div>
+            <div class="BSuggest">
+                <span class="material-symbols-outlined">
+lightbulb_circle
+</span>
+                <p>Suggest to Improve</p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
